@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name ="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>STAC Home</title>
+  </head>
+  <body>
+
+
+    <div class="container">
+    <div class = "panel panel-default">
+      <div class = "panel-body">
+        <header class = "bgimage"></header>
+        <h1 class = "introtxt">
+          <center>WELCOME TO STAC</center>
+        </h1>
+      <div class="dropdown">
+          <button class="dropbtn">Change Ranking Criteria</button>
+          <div class="dropdown-content">
+                <a href="#">Overall</a>
+                <a href="#">Auton Points</a>
+                <a href="#">Tele-op Points</a>
+                <a href="#">Gear Cycling</a>
+                <a href="#">High Goals</a>
+                <a href="#">Low Goals</a>
+                <a href="#">Hang</a>
+          </div>
+        </div>
+
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+    </div>
+  </div>
+
+
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+  </body>
+</html>
